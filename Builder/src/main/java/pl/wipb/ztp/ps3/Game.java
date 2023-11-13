@@ -43,31 +43,8 @@ class Game extends JPanel {
                     cyfra1 = linia.charAt(znaki++);
                     cyfra2 = linia.charAt(znaki++);
                     liczba = (cyfra1 - '0') * 10 + (cyfra2 - '0');
-                    switch (znak) {
-                        case 'X':
-                            builder.createX(liczba);
-                            break;
-                        case 'A':
-                            for (int i = 0; i < liczba; ++i) {
-                                builder.createSegmentA();
-                            }
-                            break;
-                        case 'B':
-                            for (int i = 0; i < liczba; ++i) {
-                                builder.createSegmentB();
-                            }
-                            break;
-                        case 'C':
-                            for (int i = 0; i < liczba; ++i) {
-                                builder.createSegmentC();
-                            }
-                            break;
-                        case 'G':
-                            for (int i = 0; i < liczba; ++i) {
-                                builder.createSegmentG();
-                            }
-                            break;
-                    }
+
+                    builder.createSegment(znak, liczba);
                 }
                 builder.NextRow();
             }
